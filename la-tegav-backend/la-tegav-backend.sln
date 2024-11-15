@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D0F2C58-FDC8-4CF8-872A-FEEE045B82B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{B5A53B7C-1BE4-438F-9D2C-9DE8D096BE09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C0047B34-A504-453D-9064-DDCB9846F7CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1FA94173-FE51-4559-B15A-B9598CA5D9F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{D7761902-C01B-4A9E-AB85-056B2CEDB44B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "la-tegav.API", "la-tegav.API\la-tegav.API.csproj", "{E1742F3B-5F72-4FD8-B04B-82C77F30AFE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "la-tegav.Application", "la-tegav.Application\la-tegav.Application.csproj", "{ECB82328-41B0-4926-AC70-5B88AD89FEF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "la-tegav.Domain", "la-tegav.Domain\la-tegav.Domain.csproj", "{688F0433-DF4B-4A13-9615-2534D5A624C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "la-tegav.Persistence", "la-tegav.Persistence\la-tegav.Persistence.csproj", "{6BE93722-0675-4B0F-BEBA-8B86ABB5ACA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1742F3B-5F72-4FD8-B04B-82C77F30AFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1742F3B-5F72-4FD8-B04B-82C77F30AFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1742F3B-5F72-4FD8-B04B-82C77F30AFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1742F3B-5F72-4FD8-B04B-82C77F30AFE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB82328-41B0-4926-AC70-5B88AD89FEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB82328-41B0-4926-AC70-5B88AD89FEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB82328-41B0-4926-AC70-5B88AD89FEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB82328-41B0-4926-AC70-5B88AD89FEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{688F0433-DF4B-4A13-9615-2534D5A624C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{688F0433-DF4B-4A13-9615-2534D5A624C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{688F0433-DF4B-4A13-9615-2534D5A624C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{688F0433-DF4B-4A13-9615-2534D5A624C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BE93722-0675-4B0F-BEBA-8B86ABB5ACA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE93722-0675-4B0F-BEBA-8B86ABB5ACA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE93722-0675-4B0F-BEBA-8B86ABB5ACA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE93722-0675-4B0F-BEBA-8B86ABB5ACA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B5A53B7C-1BE4-438F-9D2C-9DE8D096BE09} = {0D0F2C58-FDC8-4CF8-872A-FEEE045B82B3}
+		{C0047B34-A504-453D-9064-DDCB9846F7CE} = {0D0F2C58-FDC8-4CF8-872A-FEEE045B82B3}
+		{1FA94173-FE51-4559-B15A-B9598CA5D9F6} = {0D0F2C58-FDC8-4CF8-872A-FEEE045B82B3}
+		{D7761902-C01B-4A9E-AB85-056B2CEDB44B} = {0D0F2C58-FDC8-4CF8-872A-FEEE045B82B3}
+		{E1742F3B-5F72-4FD8-B04B-82C77F30AFE1} = {B5A53B7C-1BE4-438F-9D2C-9DE8D096BE09}
+		{ECB82328-41B0-4926-AC70-5B88AD89FEF2} = {C0047B34-A504-453D-9064-DDCB9846F7CE}
+		{688F0433-DF4B-4A13-9615-2534D5A624C3} = {1FA94173-FE51-4559-B15A-B9598CA5D9F6}
+		{6BE93722-0675-4B0F-BEBA-8B86ABB5ACA0} = {D7761902-C01B-4A9E-AB85-056B2CEDB44B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8D8B190-C841-4106-A67A-C1629502C091}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+@la_tegav.API_HostAddress = http://localhost:5174
+
+GET {{la_tegav.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
