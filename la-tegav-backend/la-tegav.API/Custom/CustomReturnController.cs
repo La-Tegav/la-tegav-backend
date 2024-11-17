@@ -21,7 +21,6 @@ public class CustomReturnController : ControllerBase
                 errorDetailModel.MessageDetail = ex.Message;
                 errorDetailModel.Status = StatusCodes.Status404NotFound;
                 return NotFound(errorDetailModel);
-
             default:
                 errorDetailModel.MessageDetail = ex.Message ?? string.Empty;
                 errorDetailModel.Status = StatusCodes.Status500InternalServerError;

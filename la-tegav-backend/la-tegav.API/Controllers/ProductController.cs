@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace la_tegav.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("v1/api/[controller]")]
 [ApiController]
 public class ProductController : CustomReturnController
 {
