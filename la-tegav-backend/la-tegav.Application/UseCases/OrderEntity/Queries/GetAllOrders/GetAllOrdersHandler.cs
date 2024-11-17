@@ -16,8 +16,17 @@ public class GetAllOrdersHandler : IRequestHandler<GetAllOrdersQuery, List<Order
 
     public async Task<List<OrderDto>> Handle(GetAllOrdersQuery request, CancellationToken cancellationToken)
     {
-        List<Order> ordersList = await _orderRepository.GetAll(cancellationToken);
+        List<Order> ordersList = await _orderRepository.GetAllOrders(cancellationToken);
 
-        throw new NotImplementedException();
+        return ordersList.Select(o => new OrderDto
+        {
+            Id = o.Id,
+            Total = o.Total,
+            Status = o.Status,
+            Address = o.Address,
+            DeliveryDate = o.DeliveryDate,
+            OrderDate = o.OrderDate,
+            Items = o.Items
+        }).ToList();
     }
 }

@@ -23,6 +23,7 @@ public class OrderDto
             Status = order.Status,
             Address = order.Address,
             DeliveryDate = order.DeliveryDate,
+            OrderDate = order.OrderDate,
             Items = order.Items
         };
     }

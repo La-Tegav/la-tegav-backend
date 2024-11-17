@@ -1,4 +1,5 @@
 ﻿using la_tegav.Application.Dtos;
+using la_tegav.Domain.Entities;
 using la_tegav.Domain.Interfaces;
 using MediatR;
 
@@ -15,7 +16,7 @@ public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, Produc
 
     public async Task<ProductDto> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.GetById(request.Id, cancellationToken);
+        Product product = await _productRepository.GetById(request.Id, cancellationToken);
 
         if (product == null) throw new NullReferenceException();
 
