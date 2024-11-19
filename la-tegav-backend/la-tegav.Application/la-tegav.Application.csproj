@@ -16,4 +16,8 @@
     <ProjectReference Include="..\la-tegav.Domain\la-tegav.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\UserEntity\Queries\" />
+  </ItemGroup>
+
 </Project>
