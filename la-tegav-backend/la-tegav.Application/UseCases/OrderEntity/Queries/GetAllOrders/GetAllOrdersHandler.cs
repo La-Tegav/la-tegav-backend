@@ -1,7 +1,9 @@
 ﻿using la_tegav.Application.Dtos;
 using la_tegav.Domain.Entities;
+using la_tegav.Domain.Enums;
 using la_tegav.Domain.Interfaces;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace la_tegav.Application.UseCases.OrderEntity.Queries.GetAllOrders;
 
@@ -16,7 +18,12 @@ public class GetAllOrdersHandler : IRequestHandler<GetAllOrdersQuery, List<Order
 
     public async Task<List<OrderDto>> Handle(GetAllOrdersQuery request, CancellationToken cancellationToken)
     {
-        List<Order> ordersList = await _orderRepository.GetAllOrders(cancellationToken);
+
+        List<Order> ordersList = await _orderRepository.GetAllAsync2<Order>(
+            true, 
+            include: o => o.Include(oi => oi.Items),
+            cancellationToken: cancellationToken
+        );
 
         return ordersList.Select(o => new OrderDto
         {

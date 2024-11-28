@@ -17,16 +17,49 @@ public class GetAllOrderStatusHandler : IRequestHandler<GetAllOrderStatusQuery, 
 
     public async Task<OrderStatusDto> Handle(GetAllOrderStatusQuery request, CancellationToken cancellationToken)
     {
-        List<Order> allStatus = await _orderRepository.GetAll(cancellationToken);
 
-        var result = new OrderStatusDto
+        //List<Order> allStatus = await _orderRepository.GetAll(cancellationToken);
+
+        //var result = new OrderStatusDto
+        //{
+        //    TotalPending = allStatus.Count(order => order.Status == OrderStatus.Pending),
+        //    TotalSent = allStatus.Count(order => order.Status == OrderStatus.Sent),
+        //    TotalCompleted = allStatus.Count(order => order.Status == OrderStatus.Completed),
+        //    TotalCanceled = allStatus.Count(order => order.Status == OrderStatus.Canceled)
+        //};
+
+        //return result;
+
+        List<Order> totalPending = await _orderRepository.GetAllAsync2<Order>(
+            true,
+            filter: o => o.Status == OrderStatus.Pending,
+            cancellationToken: cancellationToken
+        );
+
+        List<Order> totalSent = await _orderRepository.GetAllAsync2<Order>(
+            true,
+            filter: o => o.Status == OrderStatus.Sent,
+            cancellationToken: cancellationToken
+        );
+
+        List<Order> totalCompleted = await _orderRepository.GetAllAsync2<Order>(
+            true,
+            filter: o => o.Status == OrderStatus.Completed,
+            cancellationToken: cancellationToken
+        );
+
+        List<Order> totalCanceled = await _orderRepository.GetAllAsync2<Order>(
+            true,
+            filter: o => o.Status == OrderStatus.Canceled,
+            cancellationToken: cancellationToken
+        );
+
+        return new OrderStatusDto
         {
-            TotalPending = allStatus.Count(order => order.Status == OrderStatus.Pending),
-            TotalSent = allStatus.Count(order => order.Status == OrderStatus.Sent),
-            TotalCompleted = allStatus.Count(order => order.Status == OrderStatus.Completed),
-            TotalCanceled = allStatus.Count(order => order.Status == OrderStatus.Canceled)
+            TotalPending = totalPending.Count,
+            TotalSent = totalSent.Count,
+            TotalCompleted = totalCompleted.Count,
+            TotalCanceled = totalCanceled.Count
         };
-
-        return result;
     }
 }

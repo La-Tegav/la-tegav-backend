@@ -1,6 +1,8 @@
 ﻿using la_tegav.Domain.Common;
 using la_tegav.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
+using System.Linq.Expressions;
 
 namespace la_tegav.Persistence.Repositories;
 
@@ -57,5 +59,31 @@ public class BaseRepository<T> : IBaseRepository<T> where T : AuditableEntity
             _context.Set<T>().RemoveRange(entities);
             await _context.SaveChangesAsync(cancellation);
         }
+    }
+
+    public async Task<List<T>> GetAllAsync2<TGetAll>(
+        bool isAsNoTracking,
+        Expression<Func<T, bool>>? filter = null, 
+        Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
+        CancellationToken cancellationToken = default) where TGetAll : AuditableEntity
+    {
+        IQueryable<T> query = _context.Set<T>();
+
+        if (include != null)
+        {
+            query = include(query);
+        }
+
+        if (filter != null)
+        {
+            query = query.Where(filter);
+        }
+
+        if (isAsNoTracking)
+        {
+            query = query.AsNoTracking();
+        }
+
+        return await query.ToListAsync(cancellationToken);
     }
 }
